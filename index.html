@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Василий Гаргалык — пономарь и создатель бренда Аксиос</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F3E7D3; --bg2:#EADBC0; --ink:#4A2E1B; --ink2:#6B4A32; --gold:#B8892F; --gold2:#D9B45A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:1.05rem;line-height:1.65}
+h1,h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:700;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 1.4rem}
+
+/* hero */
+.hero{text-align:center;padding:4.5rem 0 2.5rem}
+.hero h1{font-size:clamp(2.6rem,9vw,4.6rem);letter-spacing:.01em}
+.hero p{margin:1rem auto 0;max-width:30ch;color:var(--ink2);font-size:1.15rem}
+.hero .in{animation:rise .9s ease-out both}
+
+/* bead strand: the one memorable element */
+.strand{height:34px;margin:2.2rem auto 0;max-width:560px;position:relative}
+.strand::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:var(--gold);transform:translateY(-50%)}
+.strand::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle,var(--gold2) 0 6px,var(--gold) 6.5px 8px,transparent 8.5px) 0 50%/56px 34px repeat-x,
+    radial-gradient(circle,var(--ink) 0 5px,transparent 5.5px) 28px 50%/56px 34px repeat-x;
+}
+.strand.small{max-width:240px;height:22px;margin:0 auto 2rem}
+.strand.small::after{background-size:36px 22px,36px 22px;background-position:0 50%,18px 50%;
+  background-image:
+    radial-gradient(circle,var(--gold2) 0 4px,var(--gold) 4.5px 5.5px,transparent 6px),
+    radial-gradient(circle,var(--ink) 0 3px,transparent 3.5px)}
+
+section{padding:3rem 0}
+h2{font-size:clamp(1.9rem,6vw,2.6rem);margin-bottom:1rem}
+.card{background:var(--bg2);border:2px solid var(--gold);border-radius:18px;padding:1.6rem 1.5rem;outline:1px solid var(--gold2);outline-offset:-8px}
+.card p{margin:0 0 .9rem}
+.card p:last-child{margin:0}
+
+/* links */
+.links{display:grid;gap:.9rem;margin-top:1.4rem}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:1rem;text-decoration:none;background:var(--ink);color:var(--bg);padding:1rem 1.3rem;border-radius:999px;border:2px solid var(--gold);font-weight:500;transition:transform .2s ease,background-color .2s ease}
+.btn small{color:var(--gold2);font-size:.95rem}
+.btn:hover{transform:translateY(-2px);background:#5d3a22}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt small{color:var(--gold)}
+.btn.alt:hover{background:var(--bg2)}
+
+footer{text-align:center;padding:2.5rem 1.4rem 3rem;color:var(--ink2);font-size:.95rem}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .in{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap in">
+    <h1>Василий Гаргалык</h1>
+    <p>Пономарь Кафедрального собора Рождества Христова и создатель бренда Аксиос</p>
+    <div class="strand" role="presentation"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="about">
+    <h2>Обо мне</h2>
+    <div class="card">
+      <p>Привет, я Вася. Мне 12 лет.</p>
+      <p>Я пономарь в Кафедральном соборе Рождества Христова. Ещё я создаю бренд Аксиос: плету браслеты, чтобы в повседневной жизни было больше красоты.</p>
+    </div>
+  </section>
+
+  <section id="brand">
+    <h2>Аксиос</h2>
+    <div class="card">
+      <p>Браслеты ручной работы из бисера, шнура и бусин. Каждый плетётся вручную и рассчитан на каждый день: к привычной одежде, в дорогу, в подарок.</p>
+      <p>Все работы смотрите в Instagram.</p>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://instagram.com/axios_pmr" target="_blank" rel="noopener">Смотреть браслеты <small>@axios_pmr</small></a>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Связаться</h2>
+    <div class="card">
+      <p>Хотите заказать браслет или задать вопрос? Напишите мне.</p>
+      <div class="links">
+        <a class="btn" href="https://t.me/ponomarik12" target="_blank" rel="noopener">Telegram <small>@ponomarik12</small></a>
+        <a class="btn alt" href="https://instagram.com/axios_pmr" target="_blank" rel="noopener">Instagram <small>@axios_pmr</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="strand small" role="presentation"></div>
+  Василий Гаргалык · Аксиос
+</footer>
+</body>
+</html>

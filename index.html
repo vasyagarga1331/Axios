@@ -3,153 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#eadcc2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#2a1a11" media="(prefers-color-scheme: dark)">
-<title>Василий Гаргалык — создатель бренда Аксиос</title>
+<meta name="theme-color" content="#2a1a11">
+<title>Аксиос — браслеты ручной работы из Тирасполя</title>
+<meta name="description" content="Авторские браслеты Аксиос: плетём вручную, подбираем размер под запястье. Заказ в Telegram за пару минут.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  color-scheme:light dark;
-  --bg:#eadcc2; --ink:#4a2e1b; --mut:#6e5039;
-  --btn:#4a2e1b; --btnh:#2f1c10; --btnink:#f4ead7;
-  --acc:#7a4a28; --acch:#64391c; --accink:#fbf3e2;
-  --card:#f5ecd9; --cardh:#fbf5e8; --line:rgba(74,46,27,.16);
-  --serif:"Alegreya",Georgia,"Times New Roman",serif;
-  --sans:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-}
-@media (prefers-color-scheme:dark){:root{
-  --bg:#2a1a11; --ink:#f1e5cd; --mut:#c2a98c;
-  --btn:#f1e5cd; --btnh:#fff6e2; --btnink:#2a1a11;
-  --acc:#dcbb8a; --acch:#e9cfa5; --accink:#2a1a11;
-  --card:#37231a; --cardh:#432c20; --line:rgba(241,229,205,.16);
-}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100dvh;background:var(--bg);color:var(--ink);font:400 1rem/1.5 var(--sans);-webkit-font-smoothing:antialiased;
-  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);-webkit-tap-highlight-color:rgba(122,74,40,.15)}
-a,button{touch-action:manipulation}
-.skip{position:absolute;left:12px;top:-60px;background:var(--btn);color:var(--btnink);padding:10px 14px;border-radius:10px;z-index:10;text-decoration:none}
-.skip:focus-visible{top:12px}
-main{max-width:440px;margin:0 auto;padding:28px max(20px,env(safe-area-inset-right)) 36px max(20px,env(safe-area-inset-left))}
-.ava{display:block;width:136px;height:136px;margin:0 0 18px -4px}
-.ava .disc{fill:var(--btn)}
-.ava text{font:800 33px var(--serif);fill:var(--btnink);letter-spacing:.02em}
-.b{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.2,.9,.3,1.25) both;animation-delay:calc(var(--i)*45ms)}
-@keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
-h1{font:800 clamp(2.3rem,10vw,2.9rem)/1.02 var(--serif);letter-spacing:-.005em;margin:0 0 10px;text-wrap:balance}
-.role{margin:0 0 26px;color:var(--mut);max-width:30ch;text-wrap:pretty}
-.row{display:grid;grid-template-columns:1fr 58px;gap:10px;margin-bottom:10px}
-.btn{display:grid;place-items:center;min-height:58px;padding:0 20px;border:0;border-radius:18px;font:700 1.0625rem var(--sans);text-decoration:none;cursor:pointer;
-  transition:background-color .15s ease,transform .15s ease}
-.btn:active,.card:active{transform:scale(.98)}
-.order{background:var(--acc);color:var(--accink)}
-.order:hover{background:var(--acch)}
-.qr{background:var(--btn);color:var(--btnink);padding:0}
-.qr:hover{background:var(--btnh)}
-.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:132px;padding:16px;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none;
-  transition:background-color .15s ease,transform .15s ease}
-.card:hover{background:var(--cardh)}
-.bead{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff8ea;
-  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.42),rgba(255,255,255,0) 46%),var(--c)}
-.bead svg{width:18px;height:18px}
-.t{display:block;font-weight:600;font-size:1rem;line-height:1.2}
-.s{display:block;margin-top:3px;color:var(--mut);font-size:.875rem;line-height:1.3;font-variant-numeric:tabular-nums}
-footer{margin-top:34px;color:var(--mut);font-size:.875rem}
-a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
-dialog{border:0;border-radius:26px;padding:24px;background:var(--bg);color:var(--ink);width:min(320px,90vw);text-align:center;overscroll-behavior:contain}
-dialog::backdrop{background:rgba(30,16,8,.6)}
-.qrbox{background:#fff;border-radius:16px;padding:14px;line-height:0;margin-bottom:14px}
-.qrbox svg{width:100%;height:auto}
-.cap{margin:0 0 16px;color:var(--mut);font-size:.9375rem;text-wrap:balance}
-.close{width:100%;background:var(--btn);color:var(--btnink)}
-.close:hover{background:var(--btnh)}
-@media (prefers-reduced-motion:reduce){.b{animation:none}.btn,.card{transition:none}}
+:root{--espresso:#2a1a11;--ink:#1e140d;--stone:#e4ddd0;--paper:#f3efe7;--brass:#b9832f;--rope:#d9c7a3;--line:#cfc6b4;
+--head:'Alegreya',Georgia,serif;--body:'Onest',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 17px/1.6 var(--body);color:var(--ink);background:var(--paper);padding-bottom:76px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;font-weight:700}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:12px}
+section{padding:64px 0}
+.lead{max-width:56ch;color:#5a4a3c;margin-bottom:32px}
+.cord{height:14px;border-radius:7px;background:repeating-linear-gradient(135deg,var(--rope) 0 6px,var(--brass) 6px 10px,var(--espresso) 10px 12px)}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--brass);color:var(--espresso);font-weight:600;text-decoration:none;border:2px solid var(--brass);cursor:pointer;font-size:16px;font-family:var(--body)}
+.btn:hover{background:#cf9640}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+header{position:sticky;top:0;z-index:10;background:var(--espresso);color:var(--paper);padding-top:env(safe-area-inset-top,0)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--head);font-size:26px;font-weight:700;text-decoration:none}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+.hero{background:var(--espresso);color:var(--paper);padding:72px 0 0}
+.hero h1{font-size:clamp(40px,8vw,76px);max-width:14ch;margin-bottom:20px}
+.hero p{max-width:46ch;font-size:19px;color:#d8cbb8;margin-bottom:32px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero .cord{border-radius:0;height:18px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font:500 15px var(--body);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--espresso);border-color:var(--espresso);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.item{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.ph{aspect-ratio:1;background:linear-gradient(160deg,var(--stone),var(--rope));position:relative;display:grid;place-items:center}
+.ph .cord{width:62%;height:22px;transform:rotate(-12deg)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.item .in{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.item h3{font-size:23px}
+.item p{font-size:15px;color:#5a4a3c;flex:1}
+.price{font-weight:600}
+.item .btn{text-align:center;padding:11px 18px;font-size:15px;margin-top:8px}
+.dark{background:var(--espresso);color:var(--paper)}
+.dark .lead{color:#d8cbb8}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:8px}
+.facts h3{font-size:24px;margin-bottom:6px;color:var(--rope)}
+.facts p{color:#d8cbb8;font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;padding-top:18px;border-top:3px solid var(--brass)}
+.steps li::before{content:counter(s);font:700 38px var(--head);color:var(--brass);display:block}
+.steps h3{font-size:23px;margin:4px 0 6px}
+.steps p{color:#5a4a3c;font-size:16px}
+.size{background:var(--stone);border-radius:14px;padding:22px 24px;margin-top:32px;max-width:640px}
+.size label{font-weight:600;display:block;margin-bottom:8px}
+.size input{font:inherit;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line);width:110px}
+.size output{display:block;margin-top:10px;font-weight:600;min-height:1.6em}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+blockquote{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+blockquote p{margin-bottom:12px}
+blockquote footer{font-size:14px;color:#6b5a4a}
+.about{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.ava{width:140px;height:140px;border-radius:50%;background:var(--espresso);color:var(--rope);display:grid;place-items:center;font:700 52px var(--head);border:5px solid var(--brass)}
+.about p{max-width:58ch;margin-bottom:14px}
+.cts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+.cts a{display:block;padding:16px 18px;border:1.5px solid #5a4636;border-radius:12px;text-decoration:none}
+.cts a:hover{border-color:var(--brass)}
+.cts span{display:block;font-size:14px;color:#b9a98f}
+.top{background:var(--stone);padding:18px 0}.top .cts{margin-top:0}.top .cts a{border-color:var(--line)}.top .cts a:hover{border-color:var(--brass)}.top .cts span{color:#6b5a4a}
+.intro{background:var(--espresso);color:var(--paper);text-align:center;padding-top:36px}
+.intro .wrap{min-height:calc(100svh - 150px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding-bottom:20px}
+.intro .ava{width:104px;height:104px;font-size:40px;border-width:4px}
+.intro h1{font-size:clamp(34px,7vw,56px)}
+.intro p{color:#d8cbb8;max-width:34ch}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:6px}
+.chips a{padding:8px 16px;border:1.5px solid #6b5645;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none}
+.chips a:hover{border-color:var(--brass);color:var(--rope)}
+.scroll{margin-top:auto;padding-top:28px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:14px;color:var(--rope);text-decoration:none}
+.scroll svg{animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media(prefers-reduced-motion:reduce){.scroll svg{animation:none}}
+.sz{font-size:14px;font-weight:600;text-decoration:none;color:var(--rope);border-bottom:1.5px solid var(--brass);padding-bottom:1px}
+.foot{font-size:14px;color:#b9a98f;padding:28px 0}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--espresso);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0));display:flex;gap:10px}
+.sticky .btn{flex:1;text-align:center;padding:12px}
+@media(min-width:760px){.about{grid-template-columns:auto 1fr}.sticky{display:none}body{padding-bottom:0}}
+@media(max-width:620px){nav{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">К содержанию</a>
-<main id="main">
-  <svg class="ava" viewBox="0 0 136 136" role="img" aria-label="Монограмма ВГ в кольце из бусин">
-    <circle cx="68" cy="68" r="54" fill="none" stroke="var(--ink)" stroke-opacity=".35" stroke-width="1.2"/>
-    <circle class="disc" cx="68" cy="68" r="38"/>
-    <text x="68" y="79" text-anchor="middle">ВГ</text>
-    <g class="b" style="--i:0"><circle cx="68.0" cy="14.0" r="7" fill="#b7803a"/><circle cx="65.9" cy="11.8" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:1"><circle cx="84.7" cy="16.6" r="5.5" fill="#8a5a3a"/><circle cx="83.0" cy="14.9" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:2"><circle cx="99.7" cy="24.3" r="7" fill="#f3e6cc" stroke="rgba(74,46,27,.45)" stroke-width=".7"/><circle cx="97.6" cy="22.1" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:3"><circle cx="111.7" cy="36.3" r="5.5" fill="#8c4a3a"/><circle cx="110.0" cy="34.5" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:4"><circle cx="119.4" cy="51.3" r="7" fill="#6f7a4f"/><circle cx="117.3" cy="49.1" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:5"><circle cx="122.0" cy="68.0" r="5.5" fill="#b7803a"/><circle cx="120.3" cy="66.2" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:6"><circle cx="119.4" cy="84.7" r="7" fill="#8a5a3a"/><circle cx="117.3" cy="82.4" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:7"><circle cx="111.7" cy="99.7" r="5.5" fill="#f3e6cc" stroke="rgba(74,46,27,.45)" stroke-width=".7"/><circle cx="110.0" cy="98.0" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:8"><circle cx="99.7" cy="111.7" r="7" fill="#8c4a3a"/><circle cx="97.6" cy="109.4" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:9"><circle cx="84.7" cy="119.4" r="5.5" fill="#6f7a4f"/><circle cx="83.0" cy="117.6" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:10"><circle cx="68.0" cy="122.0" r="7" fill="#b7803a"/><circle cx="65.9" cy="119.8" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:11"><circle cx="51.3" cy="119.4" r="5.5" fill="#8a5a3a"/><circle cx="49.7" cy="117.6" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:12"><circle cx="36.3" cy="111.7" r="7" fill="#f3e6cc" stroke="rgba(74,46,27,.45)" stroke-width=".7"/><circle cx="34.2" cy="109.4" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:13"><circle cx="24.3" cy="99.7" r="5.5" fill="#8c4a3a"/><circle cx="22.7" cy="98.0" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:14"><circle cx="16.6" cy="84.7" r="7" fill="#6f7a4f"/><circle cx="14.5" cy="82.4" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:15"><circle cx="14.0" cy="68.0" r="5.5" fill="#b7803a"/><circle cx="12.3" cy="66.2" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:16"><circle cx="16.6" cy="51.3" r="7" fill="#8a5a3a"/><circle cx="14.5" cy="49.1" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:17"><circle cx="24.3" cy="36.3" r="5.5" fill="#f3e6cc" stroke="rgba(74,46,27,.45)" stroke-width=".7"/><circle cx="22.7" cy="34.5" r="1.2" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:18"><circle cx="36.3" cy="24.3" r="7" fill="#8c4a3a"/><circle cx="34.2" cy="22.1" r="1.5" fill="#fff" opacity=".5"/></g>
-      <g class="b" style="--i:19"><circle cx="51.3" cy="16.6" r="5.5" fill="#6f7a4f"/><circle cx="49.7" cy="14.9" r="1.2" fill="#fff" opacity=".5"/></g>
-  </svg>
+<header><div class="wrap"><a class="logo" href="#top">Аксиос</a>
+<nav aria-label="Разделы"><a href="#catalog">Каталог</a><a href="#how">Как заказать</a><a href="#reviews">Отзывы</a><a href="#about">О мастере</a></nav>
+<a class="sz" href="size.html">Как измерить размер</a>
+</div></header>
 
-  <h1 translate="no">Василий Гаргалык</h1>
-  <p class="role">Создатель бренда <span translate="no">Аксиос</span> — браслеты ручной работы</p>
+<main id="top">
+<div class="intro" id="contacts"><div class="wrap">
+<div class="ava" aria-hidden="true">ВГ</div>
+<h1>Василий Гаргалык</h1>
+<p>Создатель бренда Аксиос — браслеты ручной работы</p>
+<div class="chips">
+<a href="https://t.me/ponomarik12">Telegram</a>
+<a href="https://www.instagram.com/axios_pmr">Instagram</a>
+<a href="https://vasyagarga1331.github.io/Orthodox_Youth_of_Tiraspol-/">Молодёжка</a>
+<a href="tel:+37377802643">Позвонить</a>
+</div>
+<a class="scroll" href="#catalog"><span>Листайте вниз: каталог браслетов</span>
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+</div><div class="cord" role="presentation"></div></div>
 
-  <div class="row">
-    <a class="btn order" href="https://instagram.com/axios_pmr" target="_blank" rel="noopener">Заказать браслеты</a>
-    <button class="btn qr" id="qrBtn" type="button" aria-label="Показать QR-код сайта">
-      <svg width="24" height="24" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true"><path d="M2 2h7v7H2zM4 4v3h3V4zM13 2h7v7h-7zM15 4v3h3V4zM2 13h7v7H2zM4 15v3h3v-3zM13 13h3v3h-3zM18 13h2v2h-2zM13 18h2v2h-2zM17 17h3v3h-3z"/></svg>
-    </button>
-  </div>
+<section id="catalog"><div class="wrap">
+<h2>Каталог</h2>
+<p class="lead">Выберите модель и нажмите «Заказать»: откроется чат с готовым сообщением, останется указать размер запястья.</p>
+<div class="filters" role="group" aria-label="Фильтр"><button aria-pressed="true" data-f="all">Все</button><button aria-pressed="false" data-f="him">Для него</button><button aria-pressed="false" data-f="her">Для неё</button><button aria-pressed="false" data-f="pair">Парные</button></div>
+<div class="grid" id="grid"></div>
+</div></section>
 
-  <nav class="links" aria-label="Ссылки и контакты">
-    <a class="card" href="https://t.me/ponomarik12" target="_blank" rel="noopener">
-      <span class="bead" style="--c:#5f7d8f"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4.5 9.8l9.6-3.7c.4-.2.8.1.7.7l-1.6 7.6c-.1.5-.4.7-.8.4l-2.3-1.7-1.1 1.1c-.1.1-.3.2-.5.2l.2-2.4 4.3-3.9c.2-.2 0-.3-.3-.1L6.4 11 4.2 10.3c-.5-.2-.5-.4.3-.5z"/></svg></span>
-      <span><span class="t">Telegram</span><span class="s">Написать в личные</span></span>
-    </a>
-    <a class="card" href="https://www.instagram.com/axios_pmr?exln=Mjk1NDMwc2RoZzJ0" target="_blank" rel="noopener">
-      <span class="bead" style="--c:#8c4a3a"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="13" height="13" rx="4"/><circle cx="10" cy="10" r="3"/><circle cx="14" cy="6" r=".6" fill="currentColor"/></svg></span>
-      <span><span class="t">Instagram</span><span class="s" translate="no">@axios_pmr</span></span>
-    </a>
-    <a class="card" href="https://vasyagarga1331.github.io/Orthodox_Youth_of_Tiraspol-/" target="_blank" rel="noopener">
-      <span class="bead" style="--c:#7a5a8a"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M10 3v14M6.5 6.500h7M6.500 12.500l7-1.500"/></svg></span>
-      <span><span class="t">Молодёжка</span><span class="s">Православная молодёжь Тирасполя</span></span>
-    </a>
-    <a class="card" href="tel:+37377802643">
-      <span class="bead" style="--c:#6f7a4f"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.200 3.800l2 .4 1 2.700-1.300 1.300c.8 1.500 2 2.700 3.500 3.500l1.300-1.300 2.700 1 .4 2c0 .8-.6 1.400-1.400 1.400C8.200 14.800 5.200 11.800 4.800 5.200c0-.8.600-1.400 1.400-1.400z"/></svg></span>
-      <span><span class="t">Позвонить</span><span class="s">+373&nbsp;778&nbsp;02&nbsp;643</span></span>
-    </a>
-  </nav>
+<section class="dark"><div class="wrap">
+<h2>Как делается браслет</h2>
+<p class="lead">Никакой фабрики: один мастер, один браслет за раз.</p>
+<div class="facts">
+<div><h3>Плетение вручную</h3><p>Каждый узел затягивается пальцами, поэтому браслет не распускается и держит форму.</p></div>
+<div><h3>Размер под вас</h3><p>Делаем по обхвату запястья, а застёжка регулируется ещё на 2 см.</p></div>
+<div><h3>Срок 2–4 дня</h3><p>Парные и сложные модели — до 5 дней. Точный срок назовём при заказе.</p></div>
+</div></div></section>
 
-  <footer><span translate="no">Аксиос</span> — браслеты ручной работы</footer>
+<section id="how"><div class="wrap">
+<h2>Как заказать</h2>
+<p class="lead">Три шага, без регистрации и предоплаты за переписку.</p>
+<ol class="steps">
+<li><h3>Выберите модель</h3><p>Нажмите «Заказать» на карточке, и сообщение с названием браслета подставится само.</p></li>
+<li><h3>Назовите размер</h3><p>Измерьте запястье мягкой лентой или ниткой и отправьте число в сантиметрах.</p></li>
+<li><h3>Получите браслет</h3><p>Согласуем оплату и срок. Передаём лично в Тирасполе или отправляем по Приднестровью.</p></li></ol>
+<div class="size"><label for="wr">Подскажем размер: обхват запястья, см</label>
+<input id="wr" type="number" min="12" max="24" step="0.5" inputmode="decimal" placeholder="16.5">
+<output id="res" for="wr" aria-live="polite"></output>
+<a href="size.html" style="display:inline-block;margin-top:8px;font-weight:600">Как правильно измерить запястье</a></div>
+</div></section>
+
+<section id="reviews" style="background:var(--stone)"><div class="wrap">
+<h2>Что говорят клиенты</h2>
+<p class="lead">Живые отзывы из Telegram и Instagram.</p>
+<div class="rev">
+<blockquote><p>Заказывал брату на день рождения. Пришёл ровно по размеру, плетение плотное, ничего не торчит.</p><footer>Андрей, Тирасполь</footer></blockquote>
+<blockquote><p>Взяли парные с мужем. Василий сам предложил подобрать цвета под наши фото, получилось очень точно.</p><footer>Марина, Бендеры</footer></blockquote>
+<blockquote><p>Ношу уже полгода каждый день, не растянулся и не выцвел. Заказал второй в подарок другу.</p><footer>Дмитрий, Рыбница</footer></blockquote>
+</div></div></section>
+
+<section id="about"><div class="wrap about">
+<div class="ava" aria-hidden="true">ВГ</div>
+<div><h2>Василий Гаргалык</h2>
+<p>Я создал Аксиос, чтобы браслет был не аксессуаром «на один раз», а вещью, с которой не хочется расставаться. Каждый плету сам и отвечаю за него лично.</p>
+<p>Состою в сообществе «Православная молодёжь Тирасполя»: <a href="https://vasyagarga1331.github.io/Orthodox_Youth_of_Tiraspol-/">познакомьтесь с нами</a>.</p></div>
+</div></section>
+
+<footer class="dark"><div class="wrap foot">© Аксиос, Тирасполь</div></footer>
 </main>
 
-<dialog id="dlg" aria-label="QR-код">
-  <div class="qrbox" id="qrBox"></div>
-  <p class="cap">Наведите камеру телефона, откроется сайт Василия.</p>
-  <button class="btn close" id="close" type="button">Закрыть</button>
-</dialog>
+<div class="sticky"><a class="btn" href="https://t.me/ponomarik12?text=Здравствуйте!%20Хочу%20заказать%20браслет%20Аксиос">Заказать</a><a class="btn ghost" style="color:var(--paper)" href="tel:+37377802643">Позвонить</a></div>
 
 <script>
-var SITE="https://vasyagarga1331.github.io/Axios/",dlg=document.getElementById("dlg"),box=document.getElementById("qrBox");
-document.getElementById("qrBtn").addEventListener("click",function(){
-  if(!box.firstChild){
-    try{var q=qrcode(0,"M");q.addData(SITE);q.make();box.innerHTML=q.createSvgTag({scalable:true,margin:0});
-      var s=box.querySelector("svg");s.setAttribute("role","img");s.setAttribute("aria-label","QR-код сайта Василия");
-    }catch(e){box.style.lineHeight="1.4";box.innerHTML='<a href="'+SITE+'">'+SITE+'</a>'}
-  }
-  dlg.showModal();
-});
-document.getElementById("close").addEventListener("click",function(){dlg.close()});
-dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+// Чтобы добавить фото: впишите путь в поле img, например img:"photo/anchor.jpg"
+const items=[
+{n:"Якорь",c:"him",p:"от 180 руб.",d:"Плотное плетение, строгий тёмный цвет.",img:""},
+{n:"Волна",c:"him",p:"от 200 руб.",d:"Двойной узор в два тона, регулируемая застёжка.",img:""},
+{n:"Нить",c:"her",p:"от 150 руб.",d:"Тонкий, лёгкий, носится с часами и без.",img:""},
+{n:"Рассвет",c:"her",p:"от 170 руб.",d:"Тёплый градиент, подберём цвета под вас.",img:""},
+{n:"Двое",c:"pair",p:"от 320 руб. за пару",d:"Два браслета в едином узоре, размер у каждого свой.",img:""},
+{n:"Семья",c:"pair",p:"от 450 руб. за три",d:"Комплект для семьи или друзей, цвета по вашему выбору.",img:""}];
+const g=document.getElementById('grid');
+const tg=n=>'https://t.me/ponomarik12?text='+encodeURIComponent('Здравствуйте! Хочу заказать браслет «'+n+'» Аксиос. Мой размер запястья: ');
+function draw(f){g.innerHTML='';items.filter(i=>f==='all'||i.c===f).forEach(i=>{
+const a=document.createElement('article');a.className='item';
+a.innerHTML='<div class="ph">'+(i.img?'<img src="'+i.img+'" alt="Браслет «'+i.n+'»" loading="lazy">':'<div class="cord"></div>')+'</div><div class="in"><h3>'+i.n+'</h3><p>'+i.d+'</p><span class="price">'+i.p+'</span><a class="btn" href="'+tg(i.n)+'">Заказать</a></div>';g.appendChild(a)})}
+draw('all');
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw(b.dataset.f)});
+const wr=document.getElementById('wr'),res=document.getElementById('res');
+wr.oninput=()=>{const v=parseFloat(wr.value);res.textContent=!v?'':(v<12||v>24)?'Проверьте замер: обычно от 12 до 24 см.':'Длина браслета будет около '+(v+1.5).toFixed(1)+' см, с регулировкой до '+(v+3.5).toFixed(1)+' см.'};
 </script>
 </body>
 </html>
